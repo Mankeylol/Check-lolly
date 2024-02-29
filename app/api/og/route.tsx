@@ -66,7 +66,7 @@ export async function GET(request: Request) {
           <img
             width="256"
             height="256"
-            src={`${NEXT_PUBLIC_URL}/park-1.png`}
+            src={`${NEXT_PUBLIC_URL}/Lollypop-frame.png`}
             style={{
               borderRadius: 128,
             }}
