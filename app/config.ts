@@ -1,1 +1,1 @@
-export const NEXT_PUBLIC_URL = 'https://check-lolly.vercel.app/';
+export const NEXT_PUBLIC_URL = 'https://check-lolly.vercel.app';

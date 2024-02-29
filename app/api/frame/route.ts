@@ -16,8 +16,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let text: string | undefined = '';
 
   const body: FrameRequest = await req.json();
-  //const { isValid, message } = await getFrameMessage(body, { neynarApiKey: neynarApi });
-  //console.log(message)
+  const { isValid, message } = await getFrameMessage(body, { neynarApiKey: neynarApi });
+  console.log(message)
+
+  
 
   return new NextResponse(
     getFrameHtmlResponse({
