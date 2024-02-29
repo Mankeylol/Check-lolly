@@ -8,23 +8,6 @@ dotenv.config();
 
 const mongoURI = process.env.MONGO_URI || '';
 
-async function fetchData(fid: any) {
-  const client = new MongoClient(mongoURI);
-  try {
-    await client.connect();
-    console.log('MongoDB connected');
-    const db = client.db('Lollypop');
-    const collection = db.collection('users');
-
-    const result = await collection.findOne({ fid: fid });
-    console.log('MongoDB Result:', result);
-
-    return result;
-  } finally {
-    client.close();
-  }
-}
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const fid = searchParams.get('fid');
@@ -37,7 +20,7 @@ export async function GET(request: Request) {
     const db = client.db('Lollypop');
     const collection = db.collection('users');
 
-    const url: string = 'http://localhost:3001/getPoints';
+    const url: string = 'https://lolly-leaderboard-backend.vercel.app//getPoints';
 
     const data: { fid: string } = {
       fid: fid!,
@@ -83,7 +66,7 @@ export async function GET(request: Request) {
               borderRadius: 128,
             }}
           />
-          <p>{point}</p>
+          <p>{point} 🍭</p>
         </div>
       ),
       {
