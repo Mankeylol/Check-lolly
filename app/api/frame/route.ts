@@ -19,12 +19,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: neynarApi });
   console.log(message)
 
+  let fid = message?.interactor.fid
   
 
   return new NextResponse(
     getFrameHtmlResponse({
       image: {
-        src: `${NEXT_PUBLIC_URL}/api/og?fid=305644`,
+        src: `${NEXT_PUBLIC_URL}/api/og?fid=${fid}`,
       },
       postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
     }),
