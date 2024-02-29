@@ -20,7 +20,7 @@ export async function GET(request: Request) {
     const db = client.db('Lollypop');
     const collection = db.collection('users');
 
-    const url: string = 'https://lolly-leaderboard-backend.vercel.app//getPoints';
+    const url: string = 'https://lolly-leaderboard-backend.vercel.app/getPoints';
 
     const data: { fid: string } = {
       fid: fid!,
@@ -33,6 +33,11 @@ export async function GET(request: Request) {
     const response: AxiosResponse = await axios.post(url, data);
     const result: any = response.data; // Adjust the type as needed
     console.log('Response from local server:', result);
+
+    if (!response.data) {
+        console.error('Empty response');
+        return; // or handle accordingly
+      }
 
     if (!result) {
       console.log('not found');
