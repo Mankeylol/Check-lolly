@@ -63,14 +63,6 @@ export async function GET(request: Request) {
             alignItems: 'center',
           }}
         >
-          <img
-            width="256"
-            height="256"
-            src={`${NEXT_PUBLIC_URL}/Lollypop-frame.png`}
-            style={{
-              borderRadius: 128,
-            }}
-          />
           <p>{point} 🍭</p>
         </div>
       ),
