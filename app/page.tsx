@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Check Lolly',
     description: '🍭',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+    images: [`${NEXT_PUBLIC_URL}/Lollypop-frame.png`],
   },
   other: {
     ...frameMetadata,
