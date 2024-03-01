@@ -30,7 +30,8 @@ export async function GET(request: Request) {
     console.log('Sending POST request to:', url);
     console.log('Request Data:', data);
 
-    const response: AxiosResponse = await axios.post(url, data);
+    const timestamp = new Date().getTime();
+    const response: AxiosResponse = await axios.post(`${url}?timestamp=${timestamp}`, data);
     const result: any = response.data; // Adjust the type as needed
     console.log('Response from local server:', result);
 
